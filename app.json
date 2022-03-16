@@ -1,0 +1,11 @@
+{
+  "expo": {
+    "name": "try-not-to-explode",
+    "slug": "try-not-to-explode",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  },
+  "name": "try-not-to-explode"
+}
