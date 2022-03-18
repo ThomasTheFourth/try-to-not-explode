@@ -3,12 +3,13 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "start": "expo start --dev-client",
+    "start": "react-native run-ios",
     "android": "expo run:android",
     "ios": "expo run:ios",
     "web": "expo start --web"
   },
   "dependencies": {
+    "@react-native-community/audio-toolkit": "^2.0.3",
     "expo": "~44.0.2",
     "expo-splash-screen": "~0.14.1",
     "expo-status-bar": "~1.2.0",
@@ -16,6 +17,8 @@
     "react-dom": "17.0.1",
     "react-native": "0.64.3",
     "react-native-game-engine": "^1.2.0",
+    "react-native-sound": "^0.11.2",
+    "react-native-sound-player": "^0.11.3",
     "react-native-typewriter": "^0.7.0",
     "react-native-web": "0.17.1",
     "react-router-dom": "^6.2.2",

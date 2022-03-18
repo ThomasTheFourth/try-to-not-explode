@@ -9,7 +9,6 @@ import Splash from "./screens/Splash";
 import Welcome from "./screens/Welcome";
 
 export default function App() {
-  console.log(NativeHistory);
   return (
     <NativeRouter history={NativeHistory}>
       <Routes>
