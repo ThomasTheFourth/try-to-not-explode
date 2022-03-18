@@ -7,7 +7,7 @@ const Splash = ({}) => {
   const navigate = useNavigate();
 
   setTimeout(() => {
-    navigate("/Welcome");
+    navigate("/welcome");
   }, 3000);
 
   return (

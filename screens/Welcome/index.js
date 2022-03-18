@@ -1,14 +1,13 @@
 import React, { useState, useEffect } from "react";
 import { Text, View, ImageBackground } from "react-native";
 import paper from "./paper.jpeg";
-import { Background } from "./styles";
 import TypeWriter from "react-native-typewriter";
 import { Player } from "@react-native-community/audio-toolkit";
+import { Background, Title, Container } from "./styles";
 
-new Player("background.mp3").play();
-const TYPE_WRITER = new Player("typewriter.mp3");
 export default function Welcome() {
   const [opacity, setOpacity] = useState(0);
+  const typeWriterSound = new Player("typewriter.mp3");
 
   useEffect(() => {
     if (opacity < 1) {
@@ -19,10 +18,11 @@ export default function Welcome() {
   }, [opacity]);
 
   useEffect(() => {
+    new Player("background.mp3").play();
     setTimeout(() => {
-      TYPE_WRITER.play();
+      typeWriterSound.play();
       setTimeout(() => {
-        TYPE_WRITER.stop();
+        typeWriterSound.stop();
       }, 2000);
     }, 1800);
   }, []);
@@ -31,39 +31,21 @@ export default function Welcome() {
 
   const increaseOpacity = () => {
     setTimeout(() => {
-      console.log("increasing", opacity);
       setOpacity(opacity + 0.01);
     }, 5);
   };
 
   return (
-    <View style={{ backgroundColor: "black" }}>
-      <ImageBackground
-        source={paper}
-        style={{
-          opacity,
-          justifyContent: "center",
-          alignTtems: "center",
-          height: "100%",
-          width: "100%",
-        }}
-      >
-        <Text
-          style={{
-            fontFamily: "JMH Typewriter Black",
-            fontSize: 45,
-            maxWidth: 300,
-            justifyContent: "center",
-            alignSelf: "center",
-          }}
-        >
+    <Container>
+      <Background source={paper} opacity={opacity}>
+        <Title>
           {opacity > 0.2 && (
             <TypeWriter typing={1} minDelay={50}>
               try to not explode.
             </TypeWriter>
           )}
-        </Text>
-      </ImageBackground>
-    </View>
+        </Title>
+      </Background>
+    </Container>
   );
 }
