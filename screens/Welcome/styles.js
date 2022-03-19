@@ -14,6 +14,7 @@ export const Title = styled(Text)`
   max-width: 300px;
   justify-content: center;
   align-self: center;
+  margin-bottom: ${(props) => props.titleBottomMargin}px;
 `;
 
 export const Container = styled(View)`
